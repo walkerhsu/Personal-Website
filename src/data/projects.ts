@@ -122,6 +122,38 @@ export const projects: Project[] = [
     ],
   },
   {
+    title: "Water Intake Tracking System",
+    period: "2024 Fall",
+    description:
+      "Developed a system to track and encourage water intake using embedded systems and a mobile application. The project involved creating a smart device that can monitors consumption and provides reminders through the application.",
+    thumbnail: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=800&auto=format&fit=crop&q=80",
+    tags: ["C", "Algorithm", "Embedded Systems", "Flutter"],
+    role: "Software Engineer",
+    client: "Course Project",
+    duration: "1 Semester",
+    details: [
+        {
+            title: "Challenge",
+            content: "Many people struggle to maintain proper hydration throughout the day. The challenge was to create a lightweight system that not only tracks water intake but also encourages users to drink more water."
+        },
+        {
+            title: "Solution",
+            content: "I developed a system that uses a combination of embedded systems and a mobile application to track water intake. The smart device first detected the sip events through analyzing the gyroscope data using threshold-based algorithms. Then, it calculates the consumption based on the series of angles with proper filters and parameter tuning. Finally, the device communicates with the mobile app via BLE to log the intake and send reminders to the user."
+        },
+        {
+            title: "Impact",
+            content: "The system helps users maintain proper hydration by providing real-time feedback and reminders. It also serves as a valuable tool for health monitoring and data collection."
+        },
+        {
+            title: "Lessons Learned",
+            content: "This project enhanced my skills in embedded systems programming and mobile app development. I learned how to process sensor data effectively, implement the consumption algorithm appropriately, and establish Bluetooth communication between devices. Additionally, I gained insights into user experience design for IoT devices and health-related applications."
+        }
+    ],
+    links: [
+      { label: "GitHub Repository", url: "https://github.com/walkerhsu/LLM-Enhanced-DBMS", icon: GitHubIcon },
+    ],
+  },
+  {
     title: "LLM-Enhanced Database Management System",
     period: "2023 Fall ~ 2024 Spring",
     description:
