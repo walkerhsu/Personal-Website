@@ -33,7 +33,7 @@ export const projects: Project[] = [
     tags: ["Python", "Pytorch", "Hugging Face", "LLaVA", "Video LLM"],
     role: "AI Researcher",
     client: "Academic Research",
-    duration: "6 months",
+    duration: "1 year",
     details: [
       {
         title: "Challenge",
@@ -41,15 +41,15 @@ export const projects: Project[] = [
       },
       {
         title: "Solution",
-        content: "I researched and implemented various token pruning strategies to reduce the computational cost of MLLMs. Additionally, I integrated motion vectors into the model to better understand dynamic scenes in videos, which helps in focusing on relevant parts of the input."
+        content: "I first researched online to find the possible solutions, then implemented the one that integrates motion vectors into the model. This approach allows the model to reduce the sampling rate of the video while preserving great understanding of dynamic scenes in videos, which can greatly enhance its efficiency while maintaining performance."
       },
       {
         title: "Impact",
-        content: "The implemented methods showed a significant reduction in computational overhead while maintaining competitive performance on various VQA benchmarks. The findings are being prepared for publication in a top-tier conference."
+        content: "The implemented methods showed a significant reduction in computational overhead (about 90% reduction) while maintaining competitive performance on several VQA benchmarks. "
       },
       {
-        title: "Technologies",
-        content: "Python, Pytorch, Hugging Face, LLaVA, Video LLM"
+        title: "Lessons Learned",
+        content: "From this project, I learned how to perform research systematically. I started from understanding the problem, surveying existing literature, implementing and experimenting with different approaches, and finally analyzing the results. This experience has enhanced my research skills and deepened my understanding of Multimodal Large Language Models."
       }
     ],
     links: [],
