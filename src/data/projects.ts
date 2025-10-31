@@ -33,7 +33,7 @@ export const projects: Project[] = [
     tags: ["Python", "Pytorch", "Hugging Face", "LLaVA", "Video LLM"],
     role: "AI Researcher",
     client: "Academic Research",
-    duration: "6 months",
+    duration: "1 year",
     details: [
       {
         title: "Challenge",
@@ -41,15 +41,15 @@ export const projects: Project[] = [
       },
       {
         title: "Solution",
-        content: "I researched and implemented various token pruning strategies to reduce the computational cost of MLLMs. Additionally, I integrated motion vectors into the model to better understand dynamic scenes in videos, which helps in focusing on relevant parts of the input."
+        content: "I first researched online to find the possible solutions, then implemented the one that integrates motion vectors into the model. This approach allows the model to reduce the sampling rate of the video while preserving great understanding of dynamic scenes in videos, which can greatly enhance its efficiency while maintaining performance."
       },
       {
         title: "Impact",
-        content: "The implemented methods showed a significant reduction in computational overhead while maintaining competitive performance on various VQA benchmarks. The findings are being prepared for publication in a top-tier conference."
+        content: "The implemented methods showed a significant reduction in computational overhead (about 90% reduction) while maintaining competitive performance on several VQA benchmarks. "
       },
       {
-        title: "Technologies",
-        content: "Python, Pytorch, Hugging Face, LLaVA, Video LLM"
+        title: "Lessons Learned",
+        content: "From this project, I learned how to perform research systematically. I started from understanding the problem, surveying existing literature, implementing and experimenting with different approaches, and finally analyzing the results. This experience has enhanced my research skills and deepened my understanding of Multimodal Large Language Models."
       }
     ],
     links: [],
@@ -63,7 +63,7 @@ export const projects: Project[] = [
     tags: ["Python", "FastAPI", "Next.js", "GCP", "Firebase", "Data Engineering"],
     award: "Honorable Mention of NASA International Space Apps Challenge 2024",
     role: "Full-Stack Developer",
-    client: "NASA",
+    client: "NASA Space Apps Challenge",
     duration: "2 months",
     details: [
         {
@@ -72,15 +72,15 @@ export const projects: Project[] = [
         },
         {
             title: "Solution",
-            content: "I developed a full-stack web application with a Python FastAPI backend and a Next.js frontend. The system allows users to select regions of interest on a map and subscribe to notifications for new satellite imagery. The backend processes and serves the satellite data, while the frontend provides interactive visualizations."
+            content: "I and my team developed a full-stack web application with a Python FastAPI backend and a Next.js frontend. The system allows users to select regions of interest on a map and subscribe to notifications for new satellite imagery. The backend performs data ETL and calculates the relevant statistics, while the frontend provides interactive visualizations."
         },
         {
             title: "Impact",
             content: "The project won an Honorable Mention at the NASA International Space Apps Challenge 2024. It provides a valuable tool for researchers to access and analyze Landsat data more efficiently."
         },
         {
-            title: "Technologies",
-            content: "Python, FastAPI, Next.js, Google Cloud Platform (GCP), Firebase, Data Engineering"
+            title: "Lessons Learned",
+            content: "Technically, I gained hands-on experience in designing the pipeline of performing data ETL and creating interactive visualizations. I also gained knowledge on deploying my projects on Google Cloud Platform (GCP). Additionally, collaborating with a team on this project enhanced my communication and project management skills."
         }
     ],
     links: [
@@ -95,25 +95,26 @@ export const projects: Project[] = [
     thumbnail: "https://images.unsplash.com/photo-1511560793392-c697f4e11469?w=800&auto=format&fit=crop&q=80",
     tags: ["Python", "Pytorch", "PyGame", "FastAPI", "Flutter", "NLP"],
     award: "1st place of AUO Enterprise Award in MakeNTU 2024",
-    role: "Lead Developer",
+    role: "Team Leader | Developer",
+
     client: "AUO",
-    duration: "3 days",
+    duration: "3 months",
     details: [
         {
             title: "Challenge",
-            content: "Long car rides can be boring for passengers. The challenge was to create an engaging in-car entertainment experience that is interactive and context-aware."
+            content: "Long car rides can be boring for passengers. The challenge was to create an engaging in-car entertainment experience that is interactive and context-aware with the environment."
         },
         {
             title: "Solution",
-            content: "I led the development of an in-car RPG game where the story is dynamically generated by a Large Language Model based on the car's surroundings. The game features shooting gameplay using gesture detection via the car's internal cameras, providing an immersive experience."
+            content: "I led the development of an in-car RPG game where the story is dynamically generated by a Large Language Model (LLM) based on the car's surroundings. The game also features shooting gameplay using gesture detection by training a custom model. This provides an immersive experience for passengers during long journeys."
         },
         {
             title: "Impact",
-            content: "The project won the 1st place of the AUO Enterprise Award at MakeNTU 2024. It demonstrated a novel application of AI and gesture recognition for in-vehicle infotainment."
+            content: "The project won the 1st place of the AUO Enterprise Award at MakeNTU 2024. It demonstrated a novel application of AI and gesture recognition for in-vehicle entertainment."
         },
         {
-            title: "Technologies",
-            content: "Python, Pytorch, PyGame, FastAPI, Flutter, Natural Language Processing (NLP)"
+            title: "Lessons Learned",
+            content: "This project enhanced my leadership skills as I coordinated a team of developers to achieve our goals. Technically, I gained experience in integrating LLMs with real-time applications and implementing gesture recognition systems into a game system."
         }
     ],
     links: [
@@ -121,15 +122,47 @@ export const projects: Project[] = [
     ],
   },
   {
-    title: "LLM-Enhanced Database Management System",
-    period: "2023 Fall ~ 2024 Spring",
+    title: "Water Intake Tracking System",
+    period: "2024 Fall",
     description:
-      "Developed a database management system enhanced with LLM capabilities. The project involved integrating natural language processing features to allow users to interact with the database using conversational queries. Also allow extracting information from audios and pdfs to the database and query the contents.",
+      "Developed a system to track and encourage water intake using embedded systems and a mobile application. The project involved creating a smart device that can monitors consumption and provides reminders through the application.",
+    thumbnail: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=800&auto=format&fit=crop&q=80",
+    tags: ["C", "Algorithm", "Embedded Systems", "Flutter"],
+    role: "Software Engineer",
+    client: "Course Project",
+    duration: "1 Semester",
+    details: [
+        {
+            title: "Challenge",
+            content: "Many people struggle to maintain proper hydration throughout the day. The challenge was to create a lightweight system that not only tracks water intake but also encourages users to drink more water."
+        },
+        {
+            title: "Solution",
+            content: "I developed a system that uses a combination of embedded systems and a mobile application to track water intake. The smart device first detected the sip events through analyzing the gyroscope data using threshold-based algorithms. Then, it calculates the consumption based on the series of angles with proper filters and parameter tuning. Finally, the device communicates with the mobile app via BLE to log the intake and send reminders to the user."
+        },
+        {
+            title: "Impact",
+            content: "The system helps users maintain proper hydration by providing real-time feedback and reminders. It also serves as a valuable tool for health monitoring and data collection."
+        },
+        {
+            title: "Lessons Learned",
+            content: "This project enhanced my skills in embedded systems programming and mobile app development. I learned how to process sensor data effectively, implement the consumption algorithm appropriately, and establish Bluetooth communication between devices. Additionally, I gained insights into user experience design for IoT devices and health-related applications."
+        }
+    ],
+    links: [
+      { label: "GitHub Repository", url: "https://github.com/walkerhsu/LLM-Enhanced-DBMS", icon: GitHubIcon },
+    ],
+  },
+  {
+    title: "LLM-Enhanced Database Management System",
+    period: "2024 Spring",
+    description:
+      "Developed a database management system enhanced with LLM capabilities. The project involved integrating natural language processing features to allow users to interact with the database using natural languages. Also, it allows extracting information from audios and pdfs.",
     thumbnail: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=800&auto=format&fit=crop&q=80",
     tags: ["Python", "LLM", "Whisper", "LangChain", "SQL", "MongoDB"],
-    role: "Backend Developer",
+    role: "AI Engineer",
     client: "Course Project",
-    duration: "2 Quarters",
+    duration: "1 Semester",
     details: [
         {
             title: "Challenge",
@@ -137,15 +170,15 @@ export const projects: Project[] = [
         },
         {
             title: "Solution",
-            content: "I developed a system that uses a Large Language Model to translate natural language questions into database queries. It also uses OpenAI's Whisper to transcribe audio files and LangChain to process PDFs, allowing users to query the content of these files conversationally."
+            content: "I developed a system that uses a Large Language Model (LLM) to translate natural language questions into database queries including SQL and MongoDB. It also uses OpenAI's Whisper to transcribe audio files and applies LangChain to process both audio and PDF documents, allowing the system to wisely extract the information in these unstructured data and upload to te database."
         },
         {
             title: "Impact",
             content: "The system makes database interaction more accessible to a wider range of users and unlocks the information stored in unstructured data formats. It serves as a powerful tool for data analysis and retrieval."
         },
         {
-            title: "Technologies",
-            content: "Python, Large Language Models (LLM), Whisper, LangChain, SQL, MongoDB"
+            title: "Lessons Learned",
+            content: "This project enhanced my skills in database management, natural language processing (NLP), and working with unstructured data. I learned how to effectively integrate various technologies to create a cohesive system that improves user interaction with databases."
         }
     ],
     links: [
