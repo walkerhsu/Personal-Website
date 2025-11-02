@@ -3,6 +3,7 @@ import EmailIcon from "@mui/icons-material/Email";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import SchoolIcon from "@mui/icons-material/School";
+import DownloadIcon from "@mui/icons-material/Download";
 
 export default function Header() {
   return (
@@ -16,17 +17,15 @@ export default function Header() {
       }}
     >
       <Avatar
+        src="/avatar.jpeg"
+        alt="Ching-Yu (Walker), Hsu"
         sx={{
           width: 128,
           height: 128,
           mx: "auto",
           mb: 3,
-          bgcolor: "primary.main",
-          fontSize: "3rem",
         }}
-      >
-        WH
-      </Avatar>
+      />
 
       <Typography variant="h3" component="h1" gutterBottom>
         Ching-Yu (Walker), Hsu
@@ -71,6 +70,14 @@ export default function Header() {
           rel="noopener noreferrer"
         >
           LinkedIn
+        </Button>
+        <Button
+          variant="outlined"
+          startIcon={<DownloadIcon />}
+          href="/CV.pdf"
+          download
+        >
+          Download CV
         </Button>
       </Stack>
 

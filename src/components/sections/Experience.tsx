@@ -1,7 +1,17 @@
-import { Box, Typography, Card, CardContent, Chip, Stack } from "@mui/material";
+import {
+  Box,
+  Typography,
+  Card,
+  CardContent,
+  Chip,
+  Stack,
+  Button,
+} from "@mui/material";
 import WorkHistoryIcon from "@mui/icons-material/WorkHistory";
+import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import { Link } from "react-router-dom";
 import { experiences } from "../../data/experiences";
+import { renderJobTitle, renderTime } from "../utils/experienceUtils";
 
 export default function Experience() {
   return (
@@ -26,7 +36,11 @@ export default function Experience() {
 
       <Stack spacing={3}>
         {experiences.map((exp, index) => (
-          <Link to={`/experience/${index}`} key={index} style={{ textDecoration: 'none' }}>
+          <Link
+            to={`/experience/${index}`}
+            key={index}
+            style={{ textDecoration: "none" }}
+          >
             <Card variant="outlined">
               <CardContent>
                 <Box
@@ -39,14 +53,10 @@ export default function Experience() {
                 >
                   <Box>
                     <Typography variant="h6" component="h3">
-                      {exp.title}
+                      {exp.client}
                     </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                      {exp.company}
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                      {exp.period}
-                    </Typography>
+                    {renderJobTitle(exp.title)}
+                    {renderTime(exp.period)}
                   </Box>
                 </Box>
 
@@ -59,6 +69,25 @@ export default function Experience() {
                     <Chip key={tagIndex} label={tag} size="small" />
                   ))}
                 </Stack>
+
+                {exp.links && exp.links.length > 0 && (
+                  <Stack direction="row" spacing={1} sx={{ mt: 2 }}>
+                    {exp.links.map((link, linkIndex) => (
+                      <Button
+                        key={linkIndex}
+                        variant="outlined"
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        startIcon={<link.icon size={16} />}
+                        sx={{ textTransform: "none" }}
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        {link.label}
+                      </Button>
+                    ))}
+                  </Stack>
+                )}
               </CardContent>
             </Card>
           </Link>

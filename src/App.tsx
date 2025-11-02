@@ -6,6 +6,7 @@ import {
   Box,
 } from "@mui/material";
 import { Routes, Route, useLocation } from "react-router-dom";
+import Footer from "./components/layout/Footer";
 import Navigation from "./components/layout/Navigation";
 import Header from "./components/sections/Header";
 import Projects from "./components/sections/Projects";
@@ -67,6 +68,7 @@ const MainLayout = () => {
         <Experience />
         <Awards />
       </Container>
+      <Footer />
     </Box>
   );
 };

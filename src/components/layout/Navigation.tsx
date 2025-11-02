@@ -79,7 +79,7 @@ export default function Navigation({ onNavigate }: NavigationProps) {
               "&:hover": { color: "primary.main" },
             }}
           >
-            Dr. Jane Doe
+            Ching-Yu, Hsu
           </Typography>
 
           {isMobile ? (
