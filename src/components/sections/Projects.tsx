@@ -6,11 +6,12 @@ import {
   Chip,
   Stack,
   Button,
+  Grid,
 } from "@mui/material";
 import WorkIcon from "@mui/icons-material/Work";
 import { Link } from "react-router-dom";
 import { projects } from "../../data/projects";
-import { renderTimeAndAward } from "../utils/projectsUtils";
+import { Calendar } from "lucide-react";
 
 export default function Projects() {
   return (
@@ -33,62 +34,107 @@ export default function Projects() {
         </Typography>
       </Box>
 
-      <Stack spacing={3}>
+      <Grid container spacing={2} sx={{ py: 1 }}>
         {projects.map((project, index) => (
-          <Link to={`/project/${index}`} key={index} style={{ textDecoration: 'none' }}>
-            <Card variant="outlined">
-              <CardContent>
-                <Box
-                  sx={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "flex-start",
-                    mb: 2,
-                  }}
-                >
-                  <Box>
-                    <Typography variant="h6" component="h3">
-                      {project.title}
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                      {renderTimeAndAward(project.period, project.award)}
-                    </Typography>
+          <Grid item size={{ xs: 12, sm: 6 }} key={index}>
+            <Link to={`/project/${index}`} style={{ textDecoration: "none" }}>
+              <Card variant="outlined" sx={{ height: "100%" }}>
+                <CardContent>
+                  <Box
+                    sx={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "flex-start",
+                      mb: 1,
+                    }}
+                  >
+                    <Box>
+                      <Typography variant="h6" component="h3">
+                        {project.title}
+                      </Typography>
+                      <Typography variant="body2" color="text.secondary">
+                        <Box
+                          sx={{
+                            display: "flex",
+                            alignItems: "center",
+                            gap: 1,
+                            color: "text.secondary",
+                            mt: 1,
+                            mb: 1,
+                          }}
+                        >
+                          <Calendar size={16} />
+                          <Typography variant="body2">
+                            {project.period}
+                          </Typography>
+                        </Box>
+                        {project.award && (
+                          <Typography
+                            variant="body2"
+                            sx={{ color: "warning.main" }}
+                          >
+                            &#x2022; {project.award}
+                          </Typography>
+                        )}
+                        {/* {renderTimeAndAward(project.period, project.award)} */}
+                      </Typography>
+                    </Box>
                   </Box>
-                </Box>
 
-                <Typography variant="body2" color="text.secondary" paragraph>
-                  {project.description}
-                </Typography>
+                  <Typography
+                    variant="body2"
+                    color="text.secondary"
+                    sx={{
+                      display: "-webkit-box",
+                      overflow: "hidden",
+                      WebkitBoxOrient: "vertical",
+                      WebkitLineClamp: 3,
+                      mb: 1,
+                    }}
+                  >
+                    {project.description}
+                  </Typography>
 
-                <Stack direction="row" spacing={1} flexWrap="wrap" useFlexGap>
-                  {project.tags.map((tag, tagIndex) => (
-                    <Chip key={tagIndex} label={tag} size="small" />
-                  ))}
-                </Stack>
-
-                {project.links && project.links.length > 0 && (
-                  <Stack direction="row" spacing={1} sx={{ mt: 2 }}>
-                    {project.links.map((link, linkIndex) => (
-                      <Button
-                        key={linkIndex}
-                        variant="outlined"
-                        href={link.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        startIcon={<link.icon size={16} />}
-                        sx={{ textTransform: "none" }}
-                        onClick={(e) => e.stopPropagation()}
-                      >
-                        {link.label}
-                      </Button>
+                  <Stack
+                    direction="row"
+                    spacing={1}
+                    sx={{
+                      display: "-webkit-box",
+                      overflow: "hidden",
+                      WebkitBoxOrient: "vertical",
+                      WebkitLineClamp: 1,
+                      mb: 1,
+                    }}
+                  >
+                    {project.tags.map((tag, tagIndex) => (
+                      <Chip key={tagIndex} label={tag} size="small" />
                     ))}
                   </Stack>
-                )}
-              </CardContent>
-            </Card>
-          </Link>
+
+                  {project.links?.length > 0 && (
+                    <Stack direction="row" spacing={1} sx={{ mt: 2 }}>
+                      {project.links.map((link, linkIndex) => (
+                        <Button
+                          key={linkIndex}
+                          variant="outlined"
+                          href={link.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          startIcon={<link.icon size={16} />}
+                          sx={{ textTransform: "none" }}
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          {link.label}
+                        </Button>
+                      ))}
+                    </Stack>
+                  )}
+                </CardContent>
+              </Card>
+            </Link>
+          </Grid>
         ))}
-      </Stack>
+      </Grid>
     </Box>
   );
 }
