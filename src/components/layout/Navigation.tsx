@@ -3,6 +3,7 @@ import {
   AppBar,
   Toolbar,
   Typography,
+  Box,
   Button,
   IconButton,
   Drawer,
@@ -74,6 +75,10 @@ export default function Navigation() {
     </List>
   );
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <>
       <AppBar
@@ -92,16 +97,16 @@ export default function Navigation() {
             component={Link}
             to="/"
             sx={{
-              flexGrow: 1,
               textAlign: "left",
               textDecoration: "none",
               color: "inherit",
               "&:hover": { color: "primary.main" },
             }}
+            onClick={scrollToTop}
           >
             Ching-Yu, Hsu
           </Typography>
-
+          <Box sx={{ flexGrow: 1 }} />
           {isMobile ? (
             <IconButton color="inherit" edge="end" onClick={handleDrawerToggle}>
               <MenuIcon />
