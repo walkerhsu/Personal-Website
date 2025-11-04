@@ -1,6 +1,11 @@
-import { Container, Box, Typography } from "@mui/material";
+import { Container, Box, Typography, Button, Stack } from "@mui/material";
 import SchoolIcon from "@mui/icons-material/School";
-import backgroundImg from '/background.jpg';
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import EmailIcon from "@mui/icons-material/Email";
+import ArticleIcon from "@mui/icons-material/Article";
+import backgroundImg from "/background.jpg";
+import CV from "/CV.pdf";
 
 const HomePage = () => {
   return (
@@ -35,15 +40,19 @@ const HomePage = () => {
             component="h1"
             sx={{
               fontWeight: "bold",
-              fontSize: { xs: "2.5rem", sm: "3rem", md: "4rem" },
+              fontSize: { xs: "2rem", sm: "3rem", md: "4rem" },
+              mb: 1,
             }}
           >
-            Ching-Yu, Hsu
+            許景淯 Ching-Yu, Hsu
           </Typography>
           <Typography
             component="h2"
             gutterBottom
-            sx={{ fontSize: { xs: "1.25rem", sm: "1.5rem", md: "2rem" } }}
+            sx={{
+              fontSize: { xs: "1.25rem", sm: "1.5rem", md: "2rem" },
+              mb: 0.75,
+            }}
           >
             AI Enthusiast | Software Engineer
           </Typography>
@@ -51,10 +60,14 @@ const HomePage = () => {
             variant="h6"
             color="text.secondary"
             gutterBottom
-            sx={{ fontSize: { xs: "1rem", sm: "1.125rem", md: "1.25rem" } }}
+            sx={{ 
+              fontSize: { xs: "1rem", sm: "1.125rem", md: "1.25rem" },
+              mb: 0.75,
+            }}
           >
             <SchoolIcon /> National Taiwan University
           </Typography>
+
           <Typography
             variant="body1"
             maxWidth="50%"
@@ -63,10 +76,49 @@ const HomePage = () => {
               ml: "auto",
             }}
           >
-            I am a passionate developer with experience in building web
-            applications and exploring the world of AI. I am always eager to
+            Ching-Yu Hsu is an undergrad majoring in Electrical Engineering at
+            National Taiwan University. He is also a software developer with
+            experience exploring the world of AI and system deployment, eager to
             learn new technologies and apply them to solve real-world problems.
           </Typography>
+
+          <Stack
+            direction="row"
+            spacing={6}
+            justifyContent="flex-end"
+            sx={{ my: 3 }}
+          >
+            <Button
+              variant="text"
+              href="https://github.com/walkerhsu"
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{ p: 1, minWidth: "auto" }}
+            >
+              <GitHubIcon sx={{ fontSize: { xs: 32, sm: 48, md: 64 } }} />
+            </Button>
+            <Button
+              variant="text"
+              href="https://www.linkedin.com/in/walkerhsu/"
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{ p: 1, minWidth: "auto" }}
+            >
+              <LinkedInIcon sx={{ fontSize: { xs: 32, sm: 48, md: 64 } }} />
+            </Button>
+            <Button
+              variant="text"
+              href="mailto:walkerhsu0301@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{ p: 1, minWidth: "auto" }}
+            >
+              <EmailIcon sx={{ fontSize: { xs: 32, sm: 48, md: 64 } }} />
+            </Button>
+            <Button variant="text" href={CV} sx={{ p: 1, minWidth: "auto" }}>
+              <ArticleIcon sx={{ fontSize: { xs: 32, sm: 48, md: 64 } }} />
+            </Button>
+          </Stack>
         </Container>
       </Box>
     </>
