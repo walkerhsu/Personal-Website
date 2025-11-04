@@ -6,11 +6,12 @@ import {
   Chip,
   Stack,
   Button,
+  Grid,
 } from "@mui/material";
 import ScienceIcon from "@mui/icons-material/Science";
 import { Link } from "react-router-dom";
 import { research } from "../../data/research";
-import { renderTimeAndVenue } from "../utils/researchUtils";
+import { Calendar } from "lucide-react";
 
 export default function Research() {
   return (
@@ -33,64 +34,106 @@ export default function Research() {
         </Typography>
       </Box>
 
-      <Stack spacing={3}>
+      <Grid container spacing={2} sx={{ py: 1 }}>
         {research.map((item, index) => (
-          <Link
-            to={`/research/${index}`}
-            key={index}
-            style={{ textDecoration: "none" }}
-          >
-            <Card variant="outlined">
-              <CardContent>
-                <Box
-                  sx={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "flex-start",
-                    mb: 2,
-                  }}
-                >
-                  <Box>
-                    <Typography variant="h6" component="h3">
-                      {item.title}
-                    </Typography>
-                    {renderTimeAndVenue(item.period, item.venue)}
-                  </Box>
-                </Box>
-
-                <Typography variant="body2" color="text.secondary" paragraph>
-                  {item.description}
-                </Typography>
-
-                <Stack direction="row" spacing={1} flexWrap="wrap" useFlexGap>
-                  {item.tags.map((tag, tagIndex) => (
-                    <Chip key={tagIndex} label={tag} size="small" />
-                  ))}
-                </Stack>
-
-                {item.links && item.links.length > 0 && (
-                  <Stack direction="row" spacing={1} sx={{ mt: 2 }}>
-                    {item.links.map((link, linkIndex) => (
-                      <Button
-                        key={linkIndex}
-                        variant="outlined"
-                        href={link.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        startIcon={<link.icon size={16} />}
-                        sx={{ textTransform: "none" }}
-                        onClick={(e) => e.stopPropagation()}
+          <Grid item size={{ xs: 12 }} key={index}>
+            <Link
+              to={`/research/${index}`}
+              key={index}
+              style={{ textDecoration: "none" }}
+            >
+              <Card variant="outlined" sx={{ height: "100%" }}>
+                <CardContent>
+                  <Box
+                    sx={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "flex-start",
+                      mb: 2,
+                    }}
+                  >
+                    <Box>
+                      <Typography variant="h6" component="h3">
+                        {item.title}
+                      </Typography>
+                      <Box
+                        sx={{
+                          display: "flex",
+                          alignItems: "center",
+                          gap: 1,
+                          color: "text.secondary",
+                          mt: 1,
+                          mb: 1,
+                        }}
                       >
-                        {link.label}
-                      </Button>
+                        <Calendar size={16} />
+                        <Typography variant="body2">{item.period}</Typography>
+                      </Box>
+                      {item.venue && (
+                        <Typography
+                          variant="body2"
+                          sx={{ color: "warning.main" }}
+                        >
+                          &#x2022; {item.venue}
+                        </Typography>
+                      )}
+                    </Box>
+                  </Box>
+
+                  <Typography
+                    variant="body2"
+                    color="text.secondary"
+                    sx={{
+                      display: "-webkit-box",
+                      overflow: "hidden",
+                      WebkitBoxOrient: "vertical",
+                      WebkitLineClamp: 3,
+                      mb: 1,
+                    }}
+                  >
+                    {item.description}
+                  </Typography>
+
+                  <Stack
+                    direction="row"
+                    spacing={1}
+                    sx={{
+                      display: "-webkit-box",
+                      overflow: "hidden",
+                      WebkitBoxOrient: "vertical",
+                      WebkitLineClamp: 1,
+                      mb: 1,
+                    }}
+                  >
+                    {item.tags.map((tag, tagIndex) => (
+                      <Chip key={tagIndex} label={tag} size="small" />
                     ))}
                   </Stack>
-                )}
-              </CardContent>
-            </Card>
-          </Link>
+
+                  {item.links && item.links.length > 0 && (
+                    <Stack direction="row" spacing={1} sx={{ mt: 2 }}>
+                      {item.links.map((link, linkIndex) => (
+                        <Button
+                          key={linkIndex}
+                          variant="outlined"
+                          href={link.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          startIcon={<link.icon size={16} />}
+                          sx={{ textTransform: "none" }}
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          {link.label}
+                        </Button>
+                      ))}
+                    </Stack>
+                  )}
+                </CardContent>
+              </Card>
+            </Link>
+          </Grid>
         ))}
-      </Stack>
+      </Grid>
     </Box>
   );
 }
