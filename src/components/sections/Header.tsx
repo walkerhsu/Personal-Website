@@ -45,7 +45,14 @@ export default function Header() {
         <SchoolIcon /> National Taiwan University
       </Typography>
 
-      <Stack direction="row" spacing={2} justifyContent="center" sx={{ my: 3 }}>
+      <Stack
+        direction="row"
+        spacing={2}
+        justifyContent="center"
+        useFlexGap
+        flexWrap="wrap"
+        sx={{ my: 3 }}
+      >
         <Button
           variant="outlined"
           startIcon={<EmailIcon />}

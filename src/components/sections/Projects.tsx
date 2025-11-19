@@ -36,7 +36,7 @@ export default function Projects() {
 
       <Grid container spacing={2} sx={{ py: 1 }}>
         {projects.map((project, index) => (
-          <Grid item size={{ xs: 12, sm: 6 }} key={index}>
+          <Grid size={{ xs: 12, sm: 6 }} key={index}>
             <Link to={`/project/${index}`} style={{ textDecoration: "none" }}>
               <Card variant="outlined" sx={{ height: "100%" }}>
                 <CardContent>
@@ -112,7 +112,13 @@ export default function Projects() {
                   </Stack>
 
                   {project.links?.length > 0 && (
-                    <Stack direction="row" spacing={1} sx={{ mt: 2 }}>
+                    <Stack
+                      direction="row"
+                      spacing={1}
+                      useFlexGap
+                      flexWrap="wrap"
+                      sx={{ mt: 2 }}
+                    >
                       {project.links.map((link, linkIndex) => (
                         <Button
                           key={linkIndex}
