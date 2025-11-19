@@ -347,6 +347,12 @@
     font-weight: var(--font-weight-normal);
     line-height: 1.5;
   }
+
+  *, ::before, ::after {
+    transition-property: background-color, border-color;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 500ms;
+  }
 }
 
 @layer utilities {

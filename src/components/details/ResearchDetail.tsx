@@ -20,14 +20,19 @@ export default function ResearchDetail() {
   }, [id]);
 
   return (
-    <Box sx={{ minHeight: "100vh", bgcolor: "white" }}>
+    <Box sx={{ minHeight: "100vh", bgcolor: "background.paper" }}>
       {/* Navigation */}
       <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
         <Box sx={{ maxWidth: "1152px", mx: "auto", px: 3, py: 3 }}>
           <Button
             variant="text"
             onClick={() => navigate("/research")}
-            sx={{ textTransform: "none", color: "black", gap: 1, ml: -1.5 }}
+            sx={{
+              textTransform: "none",
+              color: "text.primary",
+              gap: 1,
+              ml: -1.5,
+            }}
           >
             <ArrowLeft size={16} />
             Back to Research

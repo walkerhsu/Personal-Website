@@ -160,4 +160,37 @@ export const experiences: Experience[] = [
     ],
     links: [],
   },
+  {
+    title: "Instructor",
+    client: "NTUEE Camp Teaching Group",
+    period: "2022 Summer",
+    description:
+      "Taught more than a hundred of students of training their automated speech recognition model using CNN, and later be incorporated into a robot dog to perform actions based on the speech.",
+    tags: ["ASR", "CNN", "Robot Dog", "Speech Recognition", "Teaching"],
+    role: "Instructor",
+    duration: "2 months",
+    details: [
+      {
+        title: "Challenge",
+        content:
+          "Teaching complex ASR concepts to students and integrating them with hardware.",
+      },
+      {
+        title: "Solution",
+        content:
+          "I guided students through the entire pipeline of building an automated speech recognition system. This included audio preprocessing techniques such as converting raw audio into Mel-spectrograms, designing and training Convolutional Neural Networks (CNNs) using Cross-Entropy Loss, and finally deploying the trained models onto robot dogs to execute commands based on recognized speech.",
+      },
+      {
+        title: "Impact",
+        content:
+          "100+ students successfully trained models and controlled robot dogs.",
+      },
+      {
+        title: "Lessons Learned",
+        content:
+          "I gained experience in AI model training and communicating complex concepts to high school students.",
+      },
+    ],
+    links: [],
+  },
 ];

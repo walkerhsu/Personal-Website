@@ -18,7 +18,7 @@ const HomePage = () => {
           display: "flex",
           alignItems: "flex-start",
           justifyContent: "flex-end",
-          color: "black",
+          color: "text.primary",
           textAlign: "right",
           backgroundImage: `url(${backgroundImg})`,
           backgroundSize: "cover",
@@ -31,7 +31,10 @@ const HomePage = () => {
             left: 0,
             right: 0,
             bottom: 0,
-            backgroundColor: "rgba(255, 255, 255, 0.55)",
+            backgroundColor: (theme) =>
+              theme.palette.mode === "dark"
+                ? "rgba(0, 0, 0, 0.7)"
+                : "rgba(255, 255, 255, 0.55)",
           },
         }}
       >
@@ -60,7 +63,7 @@ const HomePage = () => {
             variant="h6"
             color="text.secondary"
             gutterBottom
-            sx={{ 
+            sx={{
               fontSize: { xs: "1rem", sm: "1.125rem", md: "1.25rem" },
               mb: 0.75,
             }}
@@ -108,7 +111,7 @@ const HomePage = () => {
             </Button>
             <Button
               variant="text"
-              href="mailto:walkerhsu0301@gmail.com"
+              href="mailto:walkerhsu0808@gmail.com"
               target="_blank"
               rel="noopener noreferrer"
               sx={{ p: 1, minWidth: "auto" }}

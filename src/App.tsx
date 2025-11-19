@@ -1,5 +1,5 @@
-import { ThemeProvider, createTheme, CssBaseline } from "@mui/material";
 import { Routes, Route } from "react-router-dom";
+import { AppThemeProvider } from "./components/layout/ThemeContext";
 import ExperienceDetail from "./components/details/ExperienceDetail";
 import ProjectDetail from "./components/details/ProjectDetail";
 import ResearchDetail from "./components/details/ResearchDetail";
@@ -11,36 +11,9 @@ import Awards from "./components/sections/Awards";
 import Layout from "./pages/Layout";
 import SectionLayout from "./pages/SectionLayout";
 
-const theme = createTheme({
-  palette: {
-    mode: "light",
-    primary: {
-      main: "#2563eb",
-    },
-    secondary: {
-      main: "#9333ea",
-    },
-    background: {
-      default: "#f8fafc",
-    },
-  },
-  typography: {
-    fontFamily: [
-      "-apple-system",
-      "BlinkMacSystemFont",
-      '"Segoe UI"',
-      "Roboto",
-      '"Helvetica Neue"',
-      "Arial",
-      "sans-serif",
-    ].join(","),
-  },
-});
-
 export default function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
+    <AppThemeProvider>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
@@ -55,6 +28,6 @@ export default function App() {
           </Route>
         </Route>
       </Routes>
-    </ThemeProvider>
+    </AppThemeProvider>
   );
 }

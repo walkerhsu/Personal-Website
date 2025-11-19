@@ -21,6 +21,7 @@ import ScienceIcon from "@mui/icons-material/Science";
 import WorkHistoryIcon from "@mui/icons-material/WorkHistory";
 import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
 import { Link } from "react-router-dom";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Navigation() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -72,6 +73,18 @@ export default function Navigation() {
           </ListItemButton>
         </ListItem>
       ))}
+      <ListItem disablePadding>
+        <Box
+          sx={{
+            width: "100%",
+            display: "flex",
+            justifyContent: "center",
+            p: 2,
+          }}
+        >
+          <ThemeToggle />
+        </Box>
+      </ListItem>
     </List>
   );
 
@@ -84,9 +97,7 @@ export default function Navigation() {
       <AppBar
         position="sticky"
         sx={{
-          bgcolor: "rgba(255, 255, 255, 0.8)",
           backdropFilter: "blur(10px)",
-          color: "text.primary",
           boxShadow: 1,
           height: "64px",
         }}
@@ -124,6 +135,9 @@ export default function Navigation() {
                   {item.label}
                 </Button>
               ))}
+              <Box sx={{ ml: 2 }}>
+                <ThemeToggle />
+              </Box>
             </>
           )}
         </Toolbar>
