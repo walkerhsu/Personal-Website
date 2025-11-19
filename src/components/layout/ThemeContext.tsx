@@ -75,6 +75,14 @@ function MuiThemeWrapper({ children }: { children: ReactNode }) {
                     ? "rgba(15, 23, 42, 0.8)"
                     : "rgba(255, 255, 255, 0.8)",
                 color: currentMode === "dark" ? "#f8fafc" : "#0f172a",
+                transition: "all 0.3s ease-in",
+              },
+            },
+          },
+          MuiCard: {
+            styleOverrides: {
+              root: {
+                transition: "all 0.3s ease-in",
               },
             },
           },
