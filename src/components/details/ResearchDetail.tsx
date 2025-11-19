@@ -48,7 +48,11 @@ export default function ResearchDetail() {
         {/* Header Section */}
         <Box sx={{ mb: 6 }}>
           <Box sx={{ mb: 2 }}>
-            <Typography variant="h3" component="h1" sx={{ fontWeight: "bold" }}>
+            <Typography
+              variant="h3"
+              component="h1"
+              sx={{ fontWeight: "bold", fontSize: { xs: "2rem", md: "3rem" } }}
+            >
               {item.title}
             </Typography>
             {item.authors && (

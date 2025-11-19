@@ -36,7 +36,7 @@ export default function Research() {
 
       <Grid container spacing={2} sx={{ py: 1 }}>
         {research.map((item, index) => (
-          <Grid item size={{ xs: 12 }} key={index}>
+          <Grid size={{ xs: 12 }} key={index}>
             <Link
               to={`/research/${index}`}
               key={index}
@@ -111,7 +111,13 @@ export default function Research() {
                   </Stack>
 
                   {item.links && item.links.length > 0 && (
-                    <Stack direction="row" spacing={1} sx={{ mt: 2 }}>
+                    <Stack
+                      direction="row"
+                      spacing={1}
+                      useFlexGap
+                      flexWrap="wrap"
+                      sx={{ mt: 2 }}
+                    >
                       {item.links.map((link, linkIndex) => (
                         <Button
                           key={linkIndex}

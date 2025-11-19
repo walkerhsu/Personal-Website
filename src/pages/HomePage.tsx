@@ -5,6 +5,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
 import ArticleIcon from "@mui/icons-material/Article";
 import backgroundImg from "/background.jpg";
+import backgroundImgMobile from "/background_mobile.jpg";
 import CV from "/CV.pdf";
 
 const HomePage = () => {
@@ -20,9 +21,12 @@ const HomePage = () => {
           justifyContent: "flex-end",
           color: "text.primary",
           textAlign: "right",
-          backgroundImage: `url(${backgroundImg})`,
+          backgroundImage: {
+            xs: `url(${backgroundImgMobile})`,
+            sm: `url(${backgroundImg})`,
+          },
           backgroundSize: "cover",
-          backgroundPosition: "center",
+          backgroundPosition: { xs: "center", md: "center" },
           paddingTop: "40px",
           "&::before": {
             content: '""',
@@ -43,7 +47,7 @@ const HomePage = () => {
             component="h1"
             sx={{
               fontWeight: "bold",
-              fontSize: { xs: "2rem", sm: "3rem", md: "4rem" },
+              fontSize: { xs: "1.8rem", sm: "2.6rem", md: "3.5rem" },
               mb: 1,
             }}
           >
@@ -53,7 +57,7 @@ const HomePage = () => {
             component="h2"
             gutterBottom
             sx={{
-              fontSize: { xs: "1.25rem", sm: "1.5rem", md: "2rem" },
+              fontSize: { xs: "1.1rem", sm: "1.5rem", md: "2rem" },
               mb: 0.75,
             }}
           >
@@ -61,7 +65,7 @@ const HomePage = () => {
           </Typography>
           <Typography
             variant="h6"
-            color="text.secondary"
+            // color="text.secondary"
             gutterBottom
             sx={{
               fontSize: { xs: "1rem", sm: "1.125rem", md: "1.25rem" },
@@ -73,9 +77,10 @@ const HomePage = () => {
 
           <Typography
             variant="body1"
+            color="text.secondary"
             maxWidth="50%"
             sx={{
-              fontSize: { xs: "1rem", sm: "1.125rem", md: "1.25rem" },
+              fontSize: { xs: "0.95rem", sm: "1.125rem", md: "1.25rem" },
               ml: "auto",
             }}
           >
@@ -87,7 +92,7 @@ const HomePage = () => {
 
           <Stack
             direction="row"
-            spacing={6}
+            spacing={{ xs: 0.5, sm: 2, md: 6 }}
             justifyContent="flex-end"
             sx={{ my: 3 }}
           >
@@ -98,7 +103,7 @@ const HomePage = () => {
               rel="noopener noreferrer"
               sx={{ p: 1, minWidth: "auto" }}
             >
-              <GitHubIcon sx={{ fontSize: { xs: 32, sm: 48, md: 64 } }} />
+              <GitHubIcon sx={{ fontSize: { xs: 32, sm: 48, md: 60 } }} />
             </Button>
             <Button
               variant="text"
@@ -107,7 +112,7 @@ const HomePage = () => {
               rel="noopener noreferrer"
               sx={{ p: 1, minWidth: "auto" }}
             >
-              <LinkedInIcon sx={{ fontSize: { xs: 32, sm: 48, md: 64 } }} />
+              <LinkedInIcon sx={{ fontSize: { xs: 32, sm: 48, md: 60 } }} />
             </Button>
             <Button
               variant="text"
@@ -116,10 +121,10 @@ const HomePage = () => {
               rel="noopener noreferrer"
               sx={{ p: 1, minWidth: "auto" }}
             >
-              <EmailIcon sx={{ fontSize: { xs: 32, sm: 48, md: 64 } }} />
+              <EmailIcon sx={{ fontSize: { xs: 32, sm: 48, md: 60 } }} />
             </Button>
             <Button variant="text" href={CV} sx={{ p: 1, minWidth: "auto" }}>
-              <ArticleIcon sx={{ fontSize: { xs: 32, sm: 48, md: 64 } }} />
+              <ArticleIcon sx={{ fontSize: { xs: 32, sm: 48, md: 60 } }} />
             </Button>
           </Stack>
         </Container>
