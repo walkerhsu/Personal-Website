@@ -1,4 +1,11 @@
-import { Box, Typography, Card, CardContent, Avatar, Stack } from "@mui/material";
+import {
+  Box,
+  Typography,
+  Card,
+  CardContent,
+  Avatar,
+  Stack,
+} from "@mui/material";
 import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
 import { awards } from "../../data/awards";
 
@@ -10,7 +17,12 @@ export default function Awards() {
       sx={{ mb: 8, scrollMarginTop: "100px" }}
     >
       <Box sx={{ mb: 4 }}>
-        <Typography variant="h4" component="h2" gutterBottom sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+        <Typography
+          variant="h4"
+          component="h2"
+          gutterBottom
+          sx={{ display: "flex", alignItems: "center", gap: 1 }}
+        >
           <EmojiEventsIcon /> Awards
         </Typography>
         <Typography variant="body2" color="text.secondary">
@@ -30,7 +42,11 @@ export default function Awards() {
                   <Typography variant="h6" component="h3" gutterBottom>
                     {award.title}
                   </Typography>
-                  <Typography variant="body2" color="text.secondary" gutterBottom>
+                  <Typography
+                    variant="body2"
+                    color="text.secondary"
+                    gutterBottom
+                  >
                     {award.organization}
                   </Typography>
                 </Box>
