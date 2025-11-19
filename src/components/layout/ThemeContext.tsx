@@ -75,14 +75,71 @@ function MuiThemeWrapper({ children }: { children: ReactNode }) {
                     ? "rgba(15, 23, 42, 0.8)"
                     : "rgba(255, 255, 255, 0.8)",
                 color: currentMode === "dark" ? "#f8fafc" : "#0f172a",
-                transition: "all 0.3s ease-in",
+                transition: "all 0.3s ease-in-out",
               },
             },
           },
           MuiCard: {
             styleOverrides: {
               root: {
-                transition: "all 0.3s ease-in",
+                transition:
+                  "background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out !important",
+              },
+            },
+          },
+          MuiPaper: {
+            styleOverrides: {
+              root: {
+                transition:
+                  "background-color 0.3s ease-in-out, color 0.3s ease-in-out !important",
+              },
+            },
+          },
+          MuiTypography: {
+            styleOverrides: {
+              root: {
+                transition:
+                  "color 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out",
+              },
+            },
+          },
+          MuiListItemButton: {
+            styleOverrides: {
+              root: {
+                transition:
+                  "color 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out",
+              },
+            },
+          },
+          MuiListItemIcon: {
+            styleOverrides: {
+              root: {
+                transition:
+                  "color 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out",
+              },
+            },
+          },
+          MuiListItemText: {
+            styleOverrides: {
+              root: {
+                transition:
+                  "color 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out",
+              },
+            },
+          },
+          MuiButton: {
+            styleOverrides: {
+              root: {
+                transition:
+                  "color 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out",
+              },
+            },
+          },
+          MuiSvgIcon: {
+            styleOverrides: {
+              root: {
+                transition:
+                  "color 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out",
               },
             },
           },
