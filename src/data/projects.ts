@@ -4,6 +4,7 @@ import landsatImg from "/projects/landsat.png";
 import caRPG from "/projects/CaRPG.png";
 import llmDBMS from "/projects/LLM_DBMS.png";
 import waterIntake from "/projects/WaterIntake.png";
+import PreVision from "/projects/PreVision.png";
 
 export interface Project {
   title: string;
@@ -123,7 +124,7 @@ export const projects: Project[] = [
     period: "2024 Fall",
     description:
       "Developed a multimodal perceptron model to enhance perception in autonomous driving. The project involved finetuning LLaVA with LoRA and integrating YOLO and Depth Anything model to improve the object detection and the overall image QA accuracy.",
-    thumbnail: caRPG,
+    thumbnail: PreVision,
     tags: ["Python", "Pytorch", "LLaVA", "YOLO", "Depth Anything", "Computer Vision", "finetuning"],
     role: "Team Leader | Developer",
 
@@ -150,7 +151,7 @@ export const projects: Project[] = [
     links: [
       {
         label: "GitHub Repository",
-        url: "https://github.com/walkerhsu/makeNTU2024",
+        url: "https://github.com/walkerhsu/PreVision",
         icon: GitHubIcon,
       },
     ],
