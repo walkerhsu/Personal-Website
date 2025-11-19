@@ -36,7 +36,7 @@ export default function Experience() {
 
       <Grid container spacing={2} sx={{ py: 1 }}>
         {experiences.map((exp, index) => (
-          <Grid item size={{ xs: 12, sm: 6 }} key={index}>
+          <Grid size={{ xs: 12, sm: 6 }} key={index}>
             <Link
               to={`/experience/${index}`}
               key={index}
@@ -92,7 +92,13 @@ export default function Experience() {
                   </Stack>
 
                   {exp.links && exp.links.length > 0 && (
-                    <Stack direction="row" spacing={1} sx={{ mt: 2 }}>
+                    <Stack
+                      direction="row"
+                      spacing={1}
+                      useFlexGap
+                      flexWrap="wrap"
+                      sx={{ mt: 2 }}
+                    >
                       {exp.links.map((link, linkIndex) => (
                         <Button
                           key={linkIndex}
