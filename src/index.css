@@ -349,9 +349,43 @@
   }
 
   *, ::before, ::after {
-    transition-property: background-color, border-color;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 500ms;
+    transition-property: background-color, border-color, fill, stroke;
+    transition-timing-function: ease-in;
+    transition-duration: 300ms;
+  }
+
+  h1, h2, h3, h4, h5, h6, p, span, a, button, input, label, select, textarea, li {
+    transition-property: background-color, border-color, fill, stroke, color;
+    transition-timing-function: ease-in;
+    transition-duration: 300ms;
+  }
+
+  html {
+    min-height: 100%;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  }
+
+  body {
+    min-height: 100%;
+    position: relative;
+  }
+
+  body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;
+  }
+
+  .dark body::before {
+    opacity: 1;
   }
 }
 
