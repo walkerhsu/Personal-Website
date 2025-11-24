@@ -125,7 +125,15 @@ export const projects: Project[] = [
     description:
       "Developed a multimodal perceptron model to enhance perception in autonomous driving. The project involved finetuning LLaVA with LoRA and integrating YOLO and Depth Anything model to improve the object detection and the overall image QA accuracy.",
     thumbnail: PreVision,
-    tags: ["Python", "Pytorch", "LLaVA", "YOLO", "Depth Anything", "Computer Vision", "finetuning"],
+    tags: [
+      "Python",
+      "Pytorch",
+      "LLaVA",
+      "YOLO",
+      "Depth Anything",
+      "Computer Vision",
+      "finetuning",
+    ],
     role: "Team Leader | Developer",
 
     client: "Deep Learning for Computer Learning Course",
@@ -133,19 +141,23 @@ export const projects: Project[] = [
     details: [
       {
         title: "Challenge",
-        content: "The challenge was to improve the perception capabilities of autonomous vehicles by leveraging multimodal data and the overall image QA accuracy.",
+        content:
+          "The challenge was to improve the perception capabilities of autonomous vehicles by leveraging multimodal data and the overall image QA accuracy.",
       },
       {
         title: "Solution",
-        content: "We introduce a new module that effectively combines various visual information, including the YOLO object detection results and depth maps from the Depth Anything model, with the LLaVA framework. By finetuning LLaVA using LoRA techniques, we enhanced its ability to process and understand complex driving scenes, leading to improved accuracy in object recognition and situational awareness.",
+        content:
+          "We introduce a new module that effectively combines various visual information, including the YOLO object detection results and depth maps from the Depth Anything model, with the LLaVA framework. By finetuning LLaVA using LoRA techniques, we enhanced its ability to process and understand complex driving scenes, leading to improved accuracy in object recognition and situational awareness.",
       },
       {
         title: "Impact",
-        content: "The project significantly improved the perception capabilities of autonomous vehicles, enabling them to better understand and react to their environment. This advancement has the potential by boosting the accuracy with about 60%.",
+        content:
+          "The project significantly improved the perception capabilities of autonomous vehicles, enabling them to better understand and react to their environment. This advancement has the potential by boosting the accuracy with about 60%.",
       },
       {
         title: "Lessons Learned",
-        content: "This project enhanced my skills in multimodal learning and model finetuning techniques. I learned how to effectively integrate different data modalities to improve model performance in complex tasks such as autonomous driving.",
+        content:
+          "This project enhanced my skills in multimodal learning and model finetuning techniques. I learned how to effectively integrate different data modalities to improve model performance in complex tasks such as autonomous driving.",
       },
     ],
     links: [
@@ -191,7 +203,7 @@ export const projects: Project[] = [
     links: [
       {
         label: "GitHub Repository",
-        url: "https://github.com/walkerhsu/ES_lab/tree/main/Final_project#final-project--tech-smart-mindful-cup-tsmc",
+        url: "https://github.com/walkerhsu/Water_Intake_Tracking_System",
         icon: GitHubIcon,
       },
     ],
