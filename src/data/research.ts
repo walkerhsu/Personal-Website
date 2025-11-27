@@ -1,6 +1,7 @@
 import React from "react";
 import ArticleIcon from "@mui/icons-material/Article";
 import AEGIS from "/research/AEGIS.png";
+import EVLM from "/research/EVLM.png";
 
 export interface Research {
   title: string;
@@ -69,12 +70,11 @@ export const research: Research[] = [
     ],
   },
   {
-    title: "Efficient Multimodal Large Language Model",
+    title: "Efficient Visual Language Model (VLM)",
     description:
-      "Researching efficient Multimodal Large Language Models (MLLMs) for Visual Question Answering on images and videos. Focusing on integrating motion vectors and token pruning methods to enhance model efficiency and balance model performance.",
+      "Researching efficient Visual Language Models (VLMs) for Visual Question Answering (VQA) on images and videos. Focusing on integrating motion vectors and token pruning methods to enhance model efficiency and balance model performance.",
     period: "2024 Fall ~ Present",
-    // thumbnail:
-    // "",
+    thumbnail: EVLM,
     tags: ["Python", "Pytorch", "Hugging Face", "LLaVA", "Video LLM"],
     role: "AI Researcher",
     client: "Academic Research",
@@ -83,7 +83,7 @@ export const research: Research[] = [
       {
         title: "Challenge",
         content:
-          "The high computational cost of traditional Multimodal Large Language Models makes them unsuitable for real-time applications on devices with limited resources. There is a need to balance model performance with efficiency.",
+          "The high computational cost of traditional Visual Language Models (VLMs) makes them unsuitable for real-time applications on devices with limited resources. There is a need to balance model performance with efficiency.",
       },
       {
         title: "Solution",
@@ -98,7 +98,7 @@ export const research: Research[] = [
       {
         title: "Lessons Learned",
         content:
-          "From this project, I learned how to perform research systematically. I started from understanding the problem, surveying existing literature, implementing and experimenting with different approaches, and finally analyzing the results. This experience has enhanced my research skills and deepened my understanding of Multimodal Large Language Models.",
+          "From this project, I learned how to perform research systematically. I started from understanding the problem, surveying existing literature, implementing and experimenting with different approaches, and finally analyzing the results. This experience has enhanced my research skills and deepened my understanding of Visual Language Models.",
       },
     ],
     links: [],

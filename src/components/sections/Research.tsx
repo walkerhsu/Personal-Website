@@ -12,6 +12,8 @@ import ScienceIcon from "@mui/icons-material/Science";
 import { Link } from "react-router-dom";
 import { research } from "../../data/research";
 import { Calendar } from "lucide-react";
+import { getIconForTag } from "../../utils/iconMapper";
+import { ImageWithFallback } from "../figma/ImageWithFallback";
 
 export default function Research() {
   return (
@@ -42,18 +44,46 @@ export default function Research() {
               key={index}
               style={{ textDecoration: "none" }}
             >
-              <Card variant="outlined" sx={{ height: "100%" }}>
-                <CardContent>
+              <Card
+                variant="outlined"
+                sx={{
+                  height: "100%",
+                  display: "flex",
+                  flexDirection: { xs: "column", sm: "row" },
+                  overflow: "hidden",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                {item.thumbnail && (
                   <Box
                     sx={{
+                      width: { xs: "100%", sm: 300 },
+                      minWidth: { sm: 300 },
+                      height: { xs: "auto", sm: "auto" },
+                      p: 2,
                       display: "flex",
-                      justifyContent: "space-between",
-                      alignItems: "flex-start",
-                      mb: 2,
+                      alignItems: "center",
+                      justifyContent: "center",
                     }}
                   >
-                    <Box>
-                      <Typography variant="h6" component="h3">
+                    <ImageWithFallback
+                      src={item.thumbnail}
+                      alt={item.title}
+                      className="w-full h-full object-cover"
+                    />
+                  </Box>
+                )}
+                <Box
+                  sx={{ display: "flex", flexDirection: "column", flexGrow: 1 }}
+                >
+                  <CardContent sx={{ flexGrow: 1, p: 3 }}>
+                    <Box sx={{ mb: 2 }}>
+                      <Typography
+                        variant="h6"
+                        component="h3"
+                        sx={{ lineHeight: 1.2, mb: 0.5 }}
+                      >
                         {item.title}
                       </Typography>
                       <Box
@@ -62,8 +92,8 @@ export default function Research() {
                           alignItems: "center",
                           gap: 1,
                           color: "text.secondary",
-                          mt: 1,
-                          mb: 1,
+                          mt: 0.5,
+                          mb: 0.5,
                         }}
                       >
                         <Calendar size={16} />
@@ -72,69 +102,72 @@ export default function Research() {
                       {item.venue && (
                         <Typography
                           variant="body2"
-                          sx={{ color: "warning.main" }}
+                          sx={{ color: "warning.main", lineHeight: 1.2 }}
                         >
                           &#x2022; {item.venue}
                         </Typography>
                       )}
                     </Box>
-                  </Box>
 
-                  <Typography
-                    variant="body2"
-                    color="text.secondary"
-                    sx={{
-                      display: "-webkit-box",
-                      overflow: "hidden",
-                      WebkitBoxOrient: "vertical",
-                      WebkitLineClamp: 3,
-                      mb: 1,
-                    }}
-                  >
-                    {item.description}
-                  </Typography>
+                    <Typography
+                      variant="body2"
+                      color="text.secondary"
+                      sx={{
+                        display: "-webkit-box",
+                        overflow: "hidden",
+                        WebkitBoxOrient: "vertical",
+                        WebkitLineClamp: 3,
+                        mb: 2,
+                      }}
+                    >
+                      {item.description}
+                    </Typography>
 
-                  <Stack
-                    direction="row"
-                    spacing={1}
-                    sx={{
-                      display: "-webkit-box",
-                      overflow: "hidden",
-                      WebkitBoxOrient: "vertical",
-                      WebkitLineClamp: 1,
-                      mb: 1,
-                    }}
-                  >
-                    {item.tags.map((tag, tagIndex) => (
-                      <Chip key={tagIndex} label={tag} size="small" />
-                    ))}
-                  </Stack>
-
-                  {item.links && item.links.length > 0 && (
                     <Stack
                       direction="row"
                       spacing={1}
-                      useFlexGap
-                      flexWrap="wrap"
-                      sx={{ mt: 2 }}
+                      sx={{
+                        flexWrap: "wrap",
+                        gap: 1,
+                        "& > :not(style) ~ :not(style)": { ml: 0 },
+                      }}
                     >
-                      {item.links.map((link, linkIndex) => (
-                        <Button
-                          key={linkIndex}
-                          variant="outlined"
-                          href={link.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          startIcon={<link.icon size={16} />}
-                          sx={{ textTransform: "none" }}
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          {link.label}
-                        </Button>
+                      {item.tags.map((tag, tagIndex) => (
+                        <Chip
+                          key={tagIndex}
+                          label={tag}
+                          size="small"
+                          icon={getIconForTag(tag) || undefined}
+                        />
                       ))}
                     </Stack>
-                  )}
-                </CardContent>
+
+                    {item.links && item.links.length > 0 && (
+                      <Stack
+                        direction="row"
+                        spacing={1}
+                        useFlexGap
+                        flexWrap="wrap"
+                        sx={{ mt: 2 }}
+                      >
+                        {item.links.map((link, linkIndex) => (
+                          <Button
+                            key={linkIndex}
+                            variant="outlined"
+                            href={link.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            startIcon={<link.icon size={16} />}
+                            sx={{ textTransform: "none" }}
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            {link.label}
+                          </Button>
+                        ))}
+                      </Stack>
+                    )}
+                  </CardContent>
+                </Box>
               </Card>
             </Link>
           </Grid>

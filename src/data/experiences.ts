@@ -1,9 +1,12 @@
 import React from "react";
+import CyberLink from "/experiences/CyberLink.png";
+import JudgeBoi from "/experiences/JudgeBoi.png";
 
 export interface Experience {
   title: string;
   period: string;
   description: string;
+  thumbnail?: string;
   tags: string[];
   role: string;
   client: string;
@@ -25,7 +28,8 @@ export const experiences: Experience[] = [
     client: "CyberLink Corp.",
     period: "July 2025 - Present",
     description:
-      "Hosted a n8n server to automate the health-check on 300+ servers within 20 seconds, achieving 90% speed improvement.",
+      "Hosted a n8n server to automate the health-check on 300+ servers within 20 seconds, achieving 90% speed improvement. Additionally, I implemented a daily summary workflow that collects previous day's reports to verify execution status.",
+    thumbnail: CyberLink,
     tags: ["n8n", "Automation", "Server Health-check"],
     role: "R&D Intern",
     duration: "Ongoing",
@@ -38,17 +42,17 @@ export const experiences: Experience[] = [
       {
         title: "Solution",
         content:
-          "I implemented an n8n server to automate the process, creating workflows to ping servers, check critical services, and send real-time alerts to the DevOps team. This involved designing a scalable and resilient automation architecture.",
+          "I implemented an n8n server to automate the process, creating workflows to check the health of servers, the correctness of critical services, and send alerts to the DevOps team via email and SMS. Each service will be monitored at different schedules based on its importance. Furthermore, I developed a comprehensive daily summary workflow that aggregates reports from the previous day to verify that all health checks were executed as scheduled. The results will be compiled into a detailed summary and automatically sent via email, ensuring the team has a clear overview of the system's daily status and any potential issues.",
       },
       {
         title: "Impact",
         content:
-          "The automated system reduced health-check time from several minutes to under 20 seconds, a 90% improvement. It also enabled proactive issue detection, minimizing downtime and improving overall server reliability.",
+          "The automated system reduced health-check time from several minutes to under 20 seconds, a 90% improvement in speed. It also enabled proactive issue detection, minimizing downtime and improving overall server reliability.",
       },
       {
         title: "Lessons Learned",
         content:
-          "I gained hands-on experience in workflow automation, server management, and the importance of efficient monitoring in a large-scale environment. I also learned to work with n8n and integrate it with other internal tools.",
+          "I gained hands-on experience in workflow automation, server management, and the importance of efficient monitoring in a production environment. I also learned to work with n8n and integrate it with other internal tools.",
       },
     ],
     links: [],
@@ -74,12 +78,12 @@ export const experiences: Experience[] = [
       {
         title: "Challenge",
         content:
-          "The company needed to improve data accessibility for non-technical team members to perform BI tasks. Also, the company wished to automate repetitive data processing tasks for better efficiency and scalability.",
+          "The company needed to improve data accessibility for non-technical team members to perform BI tasks. Also, the company wished to automate repetitive data processing tasks to reduce manual effort and improve efficiency.",
       },
       {
         title: "Solution",
         content:
-          "For the first task, I developed a natural language query system that allows users to query the company's database (BigQuery) with plain English. This involves LLMs and RAG techniques to understand and process user queries effectively. For the second task, I built an end-to-end data pipeline with Apache Airflow and dbt to automate data extraction, transformation, and loading. On top of this, I implemented monitoring and alerting mechanisms to ensure data quality and pipeline reliability.",
+          "For the first task, I built a natural language query system that allows users to query the company's database (BigQuery) with plain English. This involves LLMs and RAG techniques to understand and process user queries effectively. For the second task, I built an end-to-end data pipeline with Apache Airflow and dbt to automate data extraction, transformation, and loading. On top of this, I leveraged over 50 monitoring metrics and deployed on GCP via Terraform to ensure data quality and pipeline reliability.",
       },
       {
         title: "Impact",
@@ -89,40 +93,48 @@ export const experiences: Experience[] = [
       {
         title: "Lessons Learned",
         content:
-          "I learned to build and deploy end-to-end data products, from creating NLP-powered interfaces to architecting robust and scalable data pipelines. This project solidified my skills in data engineering and MLOps.",
+          "I learned to build and deploy end-to-end data products, from creating NLP-powered interfaces to architecting robust and scalable data pipelines. This project solidified my skills in data engineering and MLOps, and it also taught me the importance of workflow automation and observability in maintaining stable model deployment.",
       },
     ],
     links: [],
   },
   {
-    title: "Teaching Assistant x3",
-    client: "NTU Machine Learning Courses",
+    title: "Teaching Assistant",
+    client: "NTU Machine Learning Course",
     period: "Jan. 2025 - Present",
     description:
-      "Developed a Transformer/LLM assignment using Gemma, an image generation assignment using ControlNet. Hosted an AI grading system for 1500+ students and performed load testing.",
-    tags: ["Gemma", "ControlNet", "Grading System", "Load Testing"],
+      "Developed and deployed an AI-driven grading system. This system automates seven different model evaluation pipelines. I also performed load testing and monitored the system to ensure its stability.",
+    thumbnail: JudgeBoi,
+    tags: [
+      "AI Grading System",
+      "n8n",
+      "Load Testing",
+      "System Design",
+      "API Integration",
+      "Docker",
+    ],
     role: "Teaching Assistant",
     duration: "Ongoing",
     details: [
       {
         title: "Challenge",
         content:
-          "Scaling the grading and assignment process for over 1500 students in advanced machine learning courses while ensuring the curriculum remained current with the latest advancements in AI.",
+          "Managing the grading process for over 1100 students in a graduate-level Machine Learning course, which required evaluating diverse models and ensuring system stability under high load.",
       },
       {
         title: "Solution",
         content:
-          "I designed and developed new assignments on cutting-edge topics, including a Transformer/LLM assignment using Google's Gemma and an image generation assignment with ControlNet. I also deployed and managed an automated grading system, performing load testing to ensure it could handle peak submission times.",
+          "I developed an AI-driven grading system automating 7 evaluation pipelines with third-party API integration and self-trained models. I also performed load testing by Locust to optimize throughput and latency. To ensure system stability, I deployed an n8n workflow that will back up the system weekly and monitor system metrics. including resource allocation and Docker container logs.",
       },
       {
         title: "Impact",
         content:
-          "The new assignments provided students with practical experience in state-of-the-art AI models. The automated grading system enabled the course to handle a large student body efficiently, reducing grading turnaround time and improving fairness.",
+          "The system successfully served over 1100 students with reliable performance. The automated monitoring and backup workflows ensured system stability and effective resource management.",
       },
       {
         title: "Lessons Learned",
         content:
-          "I gained experience in curriculum design, creating and managing automated assessment systems, and overseeing the technical infrastructure for large-scale educational technologies. I also improved my ability to explain complex topics to a diverse audience.",
+          "This experience strengthened my ability to design AI systems and ensure their reliability and effectiveness for production environments.",
       },
     ],
     links: [],

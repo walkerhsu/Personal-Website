@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { experiences } from "../../data/experiences";
 import { Button, Chip, Divider, Typography, Box, Grid } from "@mui/material";
 import { useEffect } from "react";
+import { ImageWithFallback } from "../figma/ImageWithFallback";
 
 export default function ExperienceDetail() {
   const { id } = useParams();
@@ -65,6 +66,27 @@ export default function ExperienceDetail() {
             ))}
           </Box>
         </Box>
+
+        {/* Project Image */}
+        {experience.thumbnail && (
+          <Box
+            sx={{
+              mb: 6,
+              borderRadius: 2,
+              overflow: "hidden",
+              border: 1,
+              borderColor: "divider",
+              width: "60%",
+              mx: "auto",
+            }}
+          >
+            <ImageWithFallback
+              src={experience.thumbnail}
+              alt={experience.title}
+              className="w-full h-auto aspect-video object-cover"
+            />
+          </Box>
+        )}
 
         {/* Overview Section */}
         <Box sx={{ mb: 6 }}>
