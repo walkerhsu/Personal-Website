@@ -30,12 +30,6 @@ export default function Navigation() {
 
   const navItems = [
     {
-      id: "projects",
-      label: "Projects",
-      icon: <WorkIcon />,
-      path: "/projects",
-    },
-    {
       id: "research",
       label: "Research",
       icon: <ScienceIcon />,
@@ -46,6 +40,12 @@ export default function Navigation() {
       label: "Experience",
       icon: <WorkHistoryIcon />,
       path: "/experience",
+    },
+    {
+      id: "projects",
+      label: "Projects",
+      icon: <WorkIcon />,
+      path: "/projects",
     },
     {
       id: "awards",
@@ -131,6 +131,7 @@ export default function Navigation() {
                   to={item.path}
                   startIcon={item.icon}
                   sx={{ color: "text.primary" }}
+                  onClick={scrollToTop}
                 >
                   {item.label}
                 </Button>
