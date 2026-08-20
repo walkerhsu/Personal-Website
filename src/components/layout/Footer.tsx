@@ -15,7 +15,7 @@ export default function Footer() {
     >
       <Contact />
       <Typography variant="body2" color="text.secondary" gutterBottom>
-        © {new Date().getFullYear()} Ching-Yu (Walker), Hsu. All rights
+        © {new Date().getFullYear()} Ching-Yu Hsu. All rights
         reserved.
       </Typography>
     </Box>

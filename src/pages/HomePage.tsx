@@ -51,7 +51,7 @@ const HomePage = () => {
               mb: 1,
             }}
           >
-            許景淯 Ching-Yu, Hsu
+            Ching-Yu (Walker) Hsu
           </Typography>
           <Typography
             component="h2"
@@ -61,7 +61,7 @@ const HomePage = () => {
               mb: 0.75,
             }}
           >
-            AI Enthusiast | Software Engineer
+            Software Engineer
           </Typography>
           <Typography
             variant="h6"
@@ -72,7 +72,7 @@ const HomePage = () => {
               mb: 0.75,
             }}
           >
-            <SchoolIcon /> National Taiwan University
+            <SchoolIcon /> UC Berkeley M.Eng. EECS
           </Typography>
 
           <Typography
@@ -84,10 +84,10 @@ const HomePage = () => {
               ml: "auto",
             }}
           >
-            Ching-Yu Hsu is an undergrad majoring in Electrical Engineering at
-            National Taiwan University. He is also a software developer with
-            experience exploring the world of AI and system deployment, eager to
-            learn new technologies and apply them to solve real-world problems.
+            Software engineer specializing in data engineering, AI systems, and
+            ML infrastructure. I build reliable products across the stack—from
+            agentic applications and multimodal models to production data
+            platforms.
           </Typography>
 
           <Stack
@@ -107,7 +107,7 @@ const HomePage = () => {
             </Button>
             <Button
               variant="text"
-              href="https://www.linkedin.com/in/walkerhsu/"
+              href="https://www.linkedin.com/in/chingyuhsu/"
               target="_blank"
               rel="noopener noreferrer"
               sx={{ p: 1, minWidth: "auto" }}

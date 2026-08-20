@@ -18,13 +18,13 @@ const Contact = () => {
           <GitHubIcon />
         </IconButton>
         <IconButton
-          href="https://www.linkedin.com/in/ching-yu-hsu-b5316b213/"
+          href="https://www.linkedin.com/in/chingyuhsu/"
           target="_blank"
           rel="noopener noreferrer"
         >
           <LinkedInIcon />
         </IconButton>
-        <IconButton href="mailto:walkerhsu0301@gmail.com">
+        <IconButton href="mailto:walkerhsu0808@gmail.com">
           <EmailIcon />
         </IconButton>
       </Box>
