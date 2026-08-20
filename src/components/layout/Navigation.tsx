@@ -115,7 +115,7 @@ export default function Navigation() {
             }}
             onClick={scrollToTop}
           >
-            Ching-Yu, Hsu
+            Ching-Yu Hsu
           </Typography>
           <Box sx={{ flexGrow: 1 }} />
           {isMobile ? (

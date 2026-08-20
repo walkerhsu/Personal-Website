@@ -30,15 +30,15 @@ export const research: Research[] = [
     title:
       "AEGIS : Automated Co-Evolutionary Framework for Guarding Prompt Injections Schema",
     authors: "Ting-Chun Liu, Ching-Yu Hsu, Kuan-Yi Lee, Chi-An Fu, Hung-yi Lee",
-    venue: "Paper Under Review",
+    venue: "Speech Processing and Machine Learning Lab, NTU",
     description:
       "Devised a GAN-like framework to automatically generate prompts to defend against malicious prompt injection attacks. Tested the framework on real-world articles across various LLMs, achieving a 20% in True Positive Rate (TPR) with only 2% decrease in True Negative Rate (TNR).",
-    period: "2023 Fall ~ Present",
+    period: "July 2023 - Jan. 2026",
     thumbnail: AEGIS,
     tags: ["Python", "LLM", "GAN", "Prompt Injection"],
     role: "AI Researcher",
-    client: "Academic Research",
-    duration: "2 years",
+    client: "Speech Processing and Machine Learning Lab, NTU",
+    duration: "2 years 7 months",
     details: [
       {
         title: "Challenge",
@@ -53,7 +53,7 @@ export const research: Research[] = [
       {
         title: "Impact",
         content:
-          "The AEGIS framework was tested on 100+ real-world prompt injection attacks across various LLMs, demonstrating its effectiveness in enhancing model security. The results showed a 20% improvement in True Positive Rate (TPR) for detecting prompt injections, with only a 2% decrease in True Negative Rate (TNR), indicating that the defense mechanism effectively balances security and performance. The paper is published and currently under review.",
+          "The AEGIS framework was tested on real-world prompt injection attacks across various LLMs, increasing attack detection performance by 20% while maintaining system reliability.",
       },
       {
         title: "Lessons Learned",
@@ -73,12 +73,12 @@ export const research: Research[] = [
     title: "Efficient Visual Language Model (VLM)",
     description:
       "Researching efficient Visual Language Models (VLMs) for Visual Question Answering (VQA) on images and videos. Focusing on integrating motion vectors and token pruning methods to enhance model efficiency and balance model performance.",
-    period: "2024 Fall ~ Present",
+    period: "July 2024 - Jan. 2026",
     thumbnail: EVLM,
     tags: ["Python", "Pytorch", "Hugging Face", "LLaVA", "Video LLM"],
     role: "AI Researcher",
-    client: "Academic Research",
-    duration: "1 year",
+    client: "Vision and Learning Lab, NTU",
+    duration: "1 year 7 months",
     details: [
       {
         title: "Challenge",
@@ -93,7 +93,7 @@ export const research: Research[] = [
       {
         title: "Impact",
         content:
-          "The implemented methods showed a significant reduction in computational overhead (about 90% reduction) while maintaining competitive performance on several VQA benchmarks. ",
+          "The system reduced GPU usage by over 90% while maintaining competitive accuracy on VQA benchmarks.",
       },
       {
         title: "Lessons Learned",
