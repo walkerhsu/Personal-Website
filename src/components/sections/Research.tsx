@@ -14,6 +14,12 @@ import { research } from "../../data/research";
 import { Calendar } from "lucide-react";
 import { getIconForTag } from "../../utils/iconMapper";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
+import {
+  aboveStretchedLinkSx,
+  clickableCardSx,
+  renderViewDetails,
+  stretchedLinkSx,
+} from "../utils/cardUtils";
 
 export default function Research() {
   return (
@@ -37,139 +43,144 @@ export default function Research() {
       </Box>
 
       <Grid container spacing={2} sx={{ py: 1 }}>
-        {research.map((item, index) => (
-          <Grid size={{ xs: 12 }} key={index}>
-            <Link
-              to={`/research/${index}`}
-              key={index}
-              style={{ textDecoration: "none" }}
+        {research.map((item) => (
+          <Grid size={{ xs: 12 }} key={item.id}>
+            <Card
+              variant="outlined"
+              sx={{
+                ...clickableCardSx,
+                height: "100%",
+                display: "flex",
+                flexDirection: { xs: "column", sm: "row" },
+                overflow: "hidden",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
             >
-              <Card
-                variant="outlined"
-                sx={{
-                  height: "100%",
-                  display: "flex",
-                  flexDirection: { xs: "column", sm: "row" },
-                  overflow: "hidden",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
-                {item.thumbnail && (
-                  <Box
-                    sx={{
-                      width: { xs: "100%", sm: 300 },
-                      minWidth: { sm: 300 },
-                      height: { xs: "auto", sm: "auto" },
-                      p: 2,
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                    }}
-                  >
-                    <ImageWithFallback
-                      src={item.thumbnail}
-                      alt={item.title}
-                      className="w-full h-full object-cover"
-                    />
-                  </Box>
-                )}
+              {item.thumbnail && (
                 <Box
-                  sx={{ display: "flex", flexDirection: "column", flexGrow: 1 }}
+                  sx={{
+                    width: { xs: "100%", sm: 300 },
+                    minWidth: { sm: 300 },
+                    height: { xs: "auto", sm: "auto" },
+                    p: 2,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
                 >
-                  <CardContent sx={{ flexGrow: 1, p: 3 }}>
-                    <Box sx={{ mb: 2 }}>
-                      <Typography
-                        variant="h6"
-                        component="h3"
-                        sx={{ lineHeight: 1.2, mb: 0.5 }}
+                  <ImageWithFallback
+                    src={item.thumbnail}
+                    alt={item.title}
+                    className="w-full h-full object-cover"
+                  />
+                </Box>
+              )}
+              <Box
+                sx={{ display: "flex", flexDirection: "column", flexGrow: 1 }}
+              >
+                <CardContent sx={{ flexGrow: 1, p: 3 }}>
+                  <Box sx={{ mb: 2 }}>
+                    <Typography
+                      variant="h6"
+                      component="h3"
+                      sx={{ lineHeight: 1.2, mb: 0.5 }}
+                    >
+                      <Box
+                        component={Link}
+                        to={`/research/${item.id}`}
+                        sx={stretchedLinkSx}
                       >
                         {item.title}
-                      </Typography>
-                      <Box
-                        sx={{
-                          display: "flex",
-                          alignItems: "center",
-                          gap: 1,
-                          color: "text.secondary",
-                          mt: 0.5,
-                          mb: 0.5,
-                        }}
-                      >
-                        <Calendar size={16} />
-                        <Typography variant="body2">{item.period}</Typography>
                       </Box>
-                      {item.venue && (
-                        <Typography
-                          variant="body2"
-                          sx={{ color: "warning.main", lineHeight: 1.2 }}
-                        >
-                          &#x2022; {item.venue}
-                        </Typography>
-                      )}
-                    </Box>
-
-                    <Typography
-                      variant="body2"
-                      color="text.secondary"
+                    </Typography>
+                    <Box
                       sx={{
-                        display: "-webkit-box",
-                        overflow: "hidden",
-                        WebkitBoxOrient: "vertical",
-                        WebkitLineClamp: 3,
-                        mb: 2,
+                        display: "flex",
+                        alignItems: "center",
+                        gap: 1,
+                        color: "text.secondary",
+                        mt: 0.5,
+                        mb: 0.5,
                       }}
                     >
-                      {item.description}
-                    </Typography>
+                      <Calendar size={16} />
+                      <Typography variant="body2">{item.period}</Typography>
+                    </Box>
+                    {item.venue && (
+                      <Typography
+                        variant="body2"
+                        sx={{ color: "warning.main", lineHeight: 1.2 }}
+                      >
+                        &#x2022; {item.venue}
+                      </Typography>
+                    )}
+                  </Box>
 
+                  <Typography
+                    variant="body2"
+                    color="text.secondary"
+                    sx={{
+                      display: "-webkit-box",
+                      overflow: "hidden",
+                      WebkitBoxOrient: "vertical",
+                      WebkitLineClamp: 3,
+                      mb: 2,
+                    }}
+                  >
+                    {item.description}
+                  </Typography>
+
+                  <Stack
+                    direction="row"
+                    spacing={1}
+                    sx={{
+                      flexWrap: "wrap",
+                      gap: 1,
+                      "& > :not(style) ~ :not(style)": { ml: 0 },
+                    }}
+                  >
+                    {item.tags.map((tag, tagIndex) => (
+                      <Chip
+                        key={tagIndex}
+                        label={tag}
+                        size="small"
+                        icon={getIconForTag(tag) || undefined}
+                      />
+                    ))}
+                  </Stack>
+
+                  {item.links && item.links.length > 0 && (
                     <Stack
                       direction="row"
                       spacing={1}
-                      sx={{
-                        flexWrap: "wrap",
-                        gap: 1,
-                        "& > :not(style) ~ :not(style)": { ml: 0 },
-                      }}
+                      useFlexGap
+                      flexWrap="wrap"
+                      sx={{ mt: 2 }}
                     >
-                      {item.tags.map((tag, tagIndex) => (
-                        <Chip
-                          key={tagIndex}
-                          label={tag}
-                          size="small"
-                          icon={getIconForTag(tag) || undefined}
-                        />
+                      {item.links.map((link, linkIndex) => (
+                        <Button
+                          key={linkIndex}
+                          variant="outlined"
+                          href={link.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          startIcon={<link.icon size={16} />}
+                          sx={{
+                            textTransform: "none",
+                            ...aboveStretchedLinkSx,
+                          }}
+                        >
+                          {link.label}
+                        </Button>
                       ))}
                     </Stack>
+                  )}
 
-                    {item.links && item.links.length > 0 && (
-                      <Stack
-                        direction="row"
-                        spacing={1}
-                        useFlexGap
-                        flexWrap="wrap"
-                        sx={{ mt: 2 }}
-                      >
-                        {item.links.map((link, linkIndex) => (
-                          <Button
-                            key={linkIndex}
-                            variant="outlined"
-                            href={link.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            startIcon={<link.icon size={16} />}
-                            sx={{ textTransform: "none" }}
-                            onClick={(e) => e.stopPropagation()}
-                          >
-                            {link.label}
-                          </Button>
-                        ))}
-                      </Stack>
-                    )}
-                  </CardContent>
-                </Box>
-              </Card>
-            </Link>
+                  {renderViewDetails()}
+                </CardContent>
+              </Box>
+            </Card>
           </Grid>
         ))}
       </Grid>
