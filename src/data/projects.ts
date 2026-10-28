@@ -8,6 +8,7 @@ import PreVision from "/projects/PreVision.png";
 import eyeOS from "/projects/eyeOS_thumbnail.png";
 
 export interface Project {
+  id: string;
   title: string;
   period: string;
   description: string;
@@ -31,6 +32,7 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: "eyeos",
     title: "eyeOS: AI Eye-Habit Coach for macOS",
     period: "Sep. 2026 - Oct. 2026",
     description:
@@ -80,6 +82,7 @@ export const projects: Project[] = [
     ],
   },
   {
+    id: "enterprise-llm-platform",
     title: "Enterprise LLM Platform",
     period: "Sep. 2026 - May 2027 (Expected)",
     description:
@@ -113,6 +116,7 @@ export const projects: Project[] = [
     links: [],
   },
   {
+    id: "landsat",
     title: "Landsat Data Management System",
     period: "2024 Fall",
     description:
@@ -161,6 +165,7 @@ export const projects: Project[] = [
     ],
   },
   {
+    id: "carpg",
     title: "CaRPG: in-car RPG game with shooting gameplay",
     period: "Mar. 2024 - June 2024",
     description:
@@ -203,6 +208,7 @@ export const projects: Project[] = [
     ],
   },
   {
+    id: "prevision",
     title: "Multimodal Perceptron in Autonomous Driving",
     period: "2024 Fall",
     description:
@@ -252,6 +258,7 @@ export const projects: Project[] = [
     ],
   },
   {
+    id: "water-intake",
     title: "Water Intake Tracking System",
     period: "2024 Fall",
     description:
@@ -292,6 +299,7 @@ export const projects: Project[] = [
     ],
   },
   {
+    id: "llm-dbms",
     title: "LLM-Enhanced Database Management System",
     period: "2024 Spring",
     description:

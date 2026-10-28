@@ -1,6 +1,7 @@
 import { ArrowLeft } from "lucide-react";
-import { useParams, useNavigate } from "react-router-dom";
+import { Navigate, useParams, useNavigate } from "react-router-dom";
 import { projects } from "../../data/projects";
+import { legacyProjectIds, resolveLegacyId } from "../../utils/legacyIds";
 import { Button, Chip, Divider, Typography, Box, Grid } from "@mui/material";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
 import { useEffect } from "react";
@@ -9,15 +10,17 @@ import { renderTimeAndAward } from "../utils/projectsUtils";
 export default function ProjectDetail() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const project = projects[Number(id)];
-
-  if (!project) {
-    return <Typography>Project not found</Typography>;
-  }
+  const project = projects.find((entry) => entry.id === id);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [id]);
+
+  if (!project) {
+    const legacyId = resolveLegacyId(id, legacyProjectIds);
+    if (legacyId) return <Navigate to={`/project/${legacyId}`} replace />;
+    return <Typography>Project not found</Typography>;
+  }
 
   return (
     <Box sx={{ minHeight: "100vh", bgcolor: "background.paper" }}>

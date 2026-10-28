@@ -4,6 +4,7 @@ import AEGIS from "/research/AEGIS.png";
 import EVLM from "/research/EVLM.png";
 
 export interface Research {
+  id: string;
   title: string;
   authors?: string;
   venue?: string;
@@ -27,6 +28,7 @@ export interface Research {
 
 export const research: Research[] = [
   {
+    id: "aegis",
     title:
       "AEGIS : Automated Co-Evolutionary Framework for Guarding Prompt Injections Schema",
     authors: "Ting-Chun Liu, Ching-Yu Hsu, Kuan-Yi Lee, Chi-An Fu, Hung-yi Lee",
@@ -70,6 +72,7 @@ export const research: Research[] = [
     ],
   },
   {
+    id: "efficient-vlm",
     title: "Efficient Visual Language Model (VLM)",
     description:
       "Researching efficient Visual Language Models (VLMs) for Visual Question Answering (VQA) on images and videos. Focusing on integrating motion vectors and token pruning methods to enhance model efficiency and balance model performance.",

@@ -1,6 +1,7 @@
 import { ArrowLeft } from "lucide-react";
-import { useParams, useNavigate } from "react-router-dom";
+import { Navigate, useParams, useNavigate } from "react-router-dom";
 import { research } from "../../data/research";
+import { legacyResearchIds, resolveLegacyId } from "../../utils/legacyIds";
 import { Button, Chip, Divider, Typography, Box, Grid } from "@mui/material";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
 import { useEffect } from "react";
@@ -9,15 +10,17 @@ import { renderTimeAndVenue } from "../utils/researchUtils";
 export default function ResearchDetail() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const item = research[Number(id)];
-
-  if (!item) {
-    return <Typography>Research not found</Typography>;
-  }
+  const item = research.find((entry) => entry.id === id);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [id]);
+
+  if (!item) {
+    const legacyId = resolveLegacyId(id, legacyResearchIds);
+    if (legacyId) return <Navigate to={`/research/${legacyId}`} replace />;
+    return <Typography>Research not found</Typography>;
+  }
 
   return (
     <Box sx={{ minHeight: "100vh", bgcolor: "background.paper" }}>

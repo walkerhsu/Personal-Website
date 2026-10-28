@@ -3,6 +3,7 @@ import CyberLink from "/experiences/CyberLink.png";
 import JudgeBoi from "/experiences/JudgeBoi.png";
 
 export interface Experience {
+  id: string;
   title: string;
   period: string;
   description: string;
@@ -17,6 +18,7 @@ export interface Experience {
 
 export const experiences: Experience[] = [
   {
+    id: "ntuee-instructor",
     title: "Organizer and Instructor",
     client: "NTUEE Programming Course, NTU",
     period: "Aug. 2025 - July 2026",
@@ -32,6 +34,7 @@ export const experiences: Experience[] = [
     links: [],
   },
   {
+    id: "cyberlink",
     title: "Cloud Computing Research and Development Intern",
     client: "CyberLink Corp.",
     period: "July 2025 - Jan. 2026",
@@ -48,6 +51,7 @@ export const experiences: Experience[] = [
     links: [],
   },
   {
+    id: "ml-ta",
     title: "Teaching Assistant",
     client: "Machine Learning Course, NTU",
     period: "Jan. 2025 - Jan. 2026",
@@ -64,6 +68,7 @@ export const experiences: Experience[] = [
     links: [],
   },
   {
+    id: "kkcompany",
     title: "Data Engineer Intern",
     client: "KKCompany Technologies",
     period: "July 2024 - June 2025",
