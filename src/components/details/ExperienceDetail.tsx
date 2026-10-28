@@ -1,6 +1,7 @@
 import { ArrowLeft } from "lucide-react";
-import { useParams, useNavigate } from "react-router-dom";
+import { Navigate, useParams, useNavigate } from "react-router-dom";
 import { experiences } from "../../data/experiences";
+import { legacyExperienceIds, resolveLegacyId } from "../../utils/legacyIds";
 import { Button, Chip, Divider, Typography, Box, Grid } from "@mui/material";
 import { useEffect } from "react";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
@@ -8,13 +9,15 @@ import { ImageWithFallback } from "../figma/ImageWithFallback";
 export default function ExperienceDetail() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const experience = experiences[Number(id)];
+  const experience = experiences.find((entry) => entry.id === id);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [id]);
 
   if (!experience) {
+    const legacyId = resolveLegacyId(id, legacyExperienceIds);
+    if (legacyId) return <Navigate to={`/experience/${legacyId}`} replace />;
     return <Typography>Experience not found</Typography>;
   }
 
