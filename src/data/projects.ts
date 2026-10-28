@@ -5,6 +5,7 @@ import caRPG from "/projects/CaRPG.png";
 import llmDBMS from "/projects/LLM_DBMS.png";
 import waterIntake from "/projects/WaterIntake.png";
 import PreVision from "/projects/PreVision.png";
+import eyeOS from "/projects/eyeOS.png";
 
 export interface Project {
   title: string;
@@ -29,6 +30,88 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  {
+    title: "eyeOS: AI Eye-Habit Coach for macOS",
+    period: "Sep. 2026 - Oct. 2026",
+    description:
+      "Built a macOS menu-bar app that reduces digital eye strain by coaching the habits behind it. It tracks blinking, staring, screen distance, posture, and eye rubbing on-device via webcam, and uses an LLM agent to choose the smallest useful intervention without interrupting focused work.",
+    thumbnail: eyeOS,
+    tags: [
+      "Swift",
+      "SwiftUI",
+      "Python",
+      "MediaPipe",
+      "OpenCV",
+      "LLM Agents",
+      "Ollama",
+      "Computer Vision",
+    ],
+    role: "Developer",
+    client: "Personal Project",
+    duration: "2 months",
+    details: [
+      {
+        title: "Challenge",
+        content:
+          "People with long screen time, such as students, engineers, and accountants, often suffer from computer vision syndrome caused by infrequent blinking, leaning in, and rubbing their eyes. Existing break reminders are rigid and interrupt focused work, so they tend to be ignored.",
+      },
+      {
+        title: "Solution",
+        content:
+          "eyeOS pairs a SwiftUI menu-bar app with a Python sidecar over a localhost WebSocket. MediaPipe turns each webcam frame into blink, stare, distance, posture, and rub metrics, combined into a live 0–100 eye score, and camera frames never leave the Mac. Small nudges happen in the moment: the screen blurs during prolonged staring until you blink, edges dim when you lean in, and eye rubbing prompts palming instead. For larger actions, a Claude agent picks the smallest useful step, such as adjusting brightness, contrast, dark mode, or Do Not Disturb, or guiding a voice-coached eye exercise. A local Gemma model via Ollama checks focus every ~30 seconds so nudges wait during deep work.",
+      },
+      {
+        title: "Impact",
+        content:
+          "eyeOS adapts to the user rather than interrupting them. A learning loop measures each action against how the user's eyes responded, turns the outcomes into memory rules, and runs a reflection pass after each session. An Agent tab shows every decision and its reasoning for full transparency.",
+      },
+      {
+        title: "Lessons Learned",
+        content:
+          "I learned to design an agentic system that balances on-device and cloud models for privacy and latency, to build real-time computer vision pipelines, and to ship a native macOS app that bundles its own Python runtime and models.",
+      },
+    ],
+    links: [
+      {
+        label: "GitHub Repository",
+        url: "https://github.com/walkerhsu/eyeOS",
+        icon: GitHubIcon,
+      },
+    ],
+  },
+  {
+    title: "Enterprise LLM Platform",
+    period: "Sep. 2026 - May 2027 (Expected)",
+    description:
+      "Building an on-premises LLM platform that enables enterprises to securely deploy, manage, and customize LLMs without sending sensitive data to external cloud providers.",
+    tags: ["LLM", "On-Premise", "finetuning", "RAG", "MLOps", "Docker"],
+    role: "Developer",
+    client: "Industry-Sponsored Capstone",
+    duration: "9 months",
+    details: [
+      {
+        title: "Challenge",
+        content:
+          "Enterprises want the benefits of large language models but often cannot send proprietary or regulated data to third-party cloud APIs. Building and operating their own LLM stack requires specialized expertise most teams lack.",
+      },
+      {
+        title: "Solution",
+        content:
+          "We developed an on-premise platform that gives enterprises an end-to-end workflow to build their own LLMs, from preparing internal data to finetuning, serving, and integrating models, all running on infrastructure they control.",
+      },
+      {
+        title: "Impact",
+        content:
+          "The platform lowers the barrier for enterprises to adopt LLMs while keeping data private and under their own governance.",
+      },
+      {
+        title: "Lessons Learned",
+        content:
+          "I gained experience in designing LLM infrastructure for enterprise constraints such as data privacy, limited compute, and on-premise deployment.",
+      },
+    ],
+    links: [],
+  },
   {
     title: "Landsat Data Management System",
     period: "2024 Fall",
