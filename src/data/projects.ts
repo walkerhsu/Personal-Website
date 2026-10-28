@@ -5,7 +5,7 @@ import caRPG from "/projects/CaRPG.png";
 import llmDBMS from "/projects/LLM_DBMS.png";
 import waterIntake from "/projects/WaterIntake.png";
 import PreVision from "/projects/PreVision.png";
-import eyeOS from "/projects/eyeOS.png";
+import eyeOS from "/projects/eyeOS_thumbnail.png";
 
 export interface Project {
   title: string;
